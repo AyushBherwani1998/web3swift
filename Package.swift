@@ -14,12 +14,12 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/attaswift/BigInt.git", from: "5.3.0"),
         .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", from: "1.5.0"),
-        .package(url: "https://github.com/Boilertalk/secp256k1.swift.git", from: "0.1.0"),
+        .package(url: "https://github.com/GigaBitcoin/secp256k1.swift", from: "0.16.0"),
     ],
     targets: [
         .target(
             name: "Web3Core",
-            dependencies: ["BigInt", "CryptoSwift", .product(name: "secp256k1", package: "secp256k1.swift")]
+            dependencies: ["BigInt", "CryptoSwift", .productItem(name: "secp256k1", package: "secp256k1.swift")]
         ),
         .target(
             name: "web3swift",
